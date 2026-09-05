@@ -1,0 +1,1035 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Route Card — Ladakh, 10 October</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --glacier:#E7ECEF;
+    --paper:#FBFCFC;
+    --ink:#16262E;
+    --muted:#5E7480;
+    --line:#C6D2D8;
+    --deep:#0F5C6B;
+    --signal:#E8B21D;
+    --alert:#A8322D;
+    --lichen:#6B8F3A;
+
+    --sans:"IBM Plex Sans Condensed",system-ui,sans-serif;
+    --serif:"IBM Plex Serif",Georgia,serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--glacier);
+    color:var(--ink);
+    font-family:var(--serif);
+    font-size:17px;
+    line-height:1.62;
+    -webkit-text-size-adjust:100%;
+  }
+
+  /* ---------- toolbar ---------- */
+  .bar{
+    position:sticky;top:0;z-index:60;
+    background:var(--ink);color:#EEF3F5;
+    display:flex;align-items:center;gap:10px;
+    padding:9px 14px;
+    font-family:var(--sans);font-size:14px;
+    box-shadow:0 1px 0 rgba(0,0,0,.25);
+  }
+  .bar .who{
+    flex:1;min-width:0;display:flex;align-items:center;gap:7px;
+  }
+  .bar input.name{
+    background:transparent;border:0;border-bottom:1px dashed #64808C;
+    color:#fff;font-family:var(--sans);font-size:14px;font-weight:600;
+    padding:2px 0;width:100%;max-width:150px;outline:none;
+  }
+  .bar input.name:focus{border-bottom-color:var(--signal)}
+  .bar button{
+    font-family:var(--sans);font-size:13px;font-weight:600;
+    background:#2A414B;color:#EEF3F5;border:1px solid #3D5761;
+    padding:6px 11px;border-radius:3px;cursor:pointer;
+  }
+  .bar button:hover{background:#33505C}
+  .bar button:focus-visible,
+  .sheet button:focus-visible,
+  .pop button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+  .count{
+    font-family:var(--mono);font-size:12px;
+    background:var(--signal);color:#2B2205;
+    padding:2px 7px;border-radius:10px;font-weight:500;
+  }
+
+  /* ---------- page ---------- */
+  main{max-width:720px;margin:0 auto;padding:0 18px 120px}
+  .sheet-paper{
+    background:var(--paper);
+    border-left:1px solid var(--line);
+    border-right:1px solid var(--line);
+    padding:0 22px 40px;
+    margin:0 -4px;
+  }
+
+  header.hero{padding:34px 0 8px}
+  .stamp{
+    font-family:var(--mono);font-size:11.5px;color:var(--muted);
+    letter-spacing:.06em;margin:0 0 14px;
+  }
+  h1{
+    font-family:var(--sans);font-weight:700;
+    font-size:clamp(31px,7.4vw,46px);
+    line-height:1.03;margin:0 0 12px;letter-spacing:-.015em;
+  }
+  .standfirst{font-size:17.5px;color:#33454E;margin:0 0 8px;max-width:56ch}
+
+  h2{
+    font-family:var(--sans);font-weight:700;font-size:23px;
+    margin:44px 0 4px;letter-spacing:-.01em;
+  }
+  h2 + .sub{font-family:var(--sans);color:var(--muted);font-size:14.5px;margin:0 0 16px}
+  h3{font-family:var(--sans);font-weight:600;font-size:18px;margin:26px 0 6px}
+  p{margin:0 0 15px;max-width:64ch}
+  a{color:var(--deep)}
+
+  /* ---------- elevation ---------- */
+  .profile{
+    background:var(--ink);border-radius:4px;
+    padding:14px 8px 8px;margin:20px 0 10px;overflow:hidden;
+  }
+  .profile svg{width:100%;height:auto;display:block}
+  .trace{
+    fill:none;stroke-width:2.4;
+    stroke-dasharray:var(--len);stroke-dashoffset:var(--len);
+    animation:draw 1500ms cubic-bezier(.4,0,.2,1) forwards;
+  }
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @media (prefers-reduced-motion:reduce){
+    .trace{animation:none;stroke-dashoffset:0}
+  }
+  .key{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    font-family:var(--sans);font-size:13px;color:var(--muted);
+    margin:0 0 26px;
+  }
+  .key i{display:inline-block;width:18px;height:0;border-top:2.4px solid;margin-right:6px;vertical-align:middle}
+
+  /* ---------- day list ---------- */
+  .day{
+    display:grid;grid-template-columns:52px 1fr;gap:0 14px;
+    padding:13px 0;border-top:1px solid var(--line);
+  }
+  .day:last-of-type{border-bottom:1px solid var(--line)}
+  .daynum{
+    font-family:var(--mono);font-size:12.5px;color:var(--muted);
+    padding-top:3px;
+  }
+  .day h4{font-family:var(--sans);font-size:17px;font-weight:600;margin:0 0 3px}
+  .day p{margin:0;font-size:16px;color:#33454E}
+  .alt{font-family:var(--mono);font-size:12.5px;color:var(--deep);white-space:nowrap}
+  .day.rest{background:#F2F6F7;margin:0 -12px;padding-left:12px;padding-right:12px}
+  .day.rest .daynum{color:var(--deep)}
+
+  /* ---------- gate: the one loud thing ---------- */
+  .gate{
+    background:var(--signal);color:#241C02;
+    margin:36px -22px;padding:26px 22px 24px;
+  }
+  .gate h2{margin:0 0 6px;color:#241C02}
+  .gate p{color:#2E2404;max-width:60ch}
+  .gate .rule{
+    font-family:var(--sans);font-weight:700;font-size:20px;
+    border-top:2px solid #241C02;margin-top:18px;padding-top:14px;
+  }
+  .gate ol{margin:14px 0 0;padding-left:20px}
+  .gate li{margin-bottom:9px}
+
+  .caution{
+    border-left:4px solid var(--alert);
+    padding:2px 0 2px 15px;margin:22px 0;
+  }
+  .caution p:last-child{margin-bottom:0}
+
+  table{
+    border-collapse:collapse;width:100%;margin:16px 0 24px;
+    font-family:var(--sans);font-size:15px;
+  }
+  th,td{text-align:left;padding:9px 10px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-weight:600;color:var(--muted);font-size:13.5px}
+  td.n{font-family:var(--mono);font-size:13px;white-space:nowrap}
+
+  ul.kit{list-style:none;padding:0;margin:14px 0}
+  ul.kit li{padding:11px 0;border-top:1px solid var(--line)}
+  ul.kit b{font-family:var(--sans);font-size:16.5px;display:block;margin-bottom:2px}
+
+  /* ---------- highlights ---------- */
+  mark.hl{
+    padding:1px 0;border-radius:2px;cursor:pointer;
+    background:#F7DE8E;color:inherit;
+    box-shadow:inset 0 -1.5px 0 #D9AE1B;
+  }
+  mark.hl[data-c="blue"]{background:#BFDCE6;box-shadow:inset 0 -1.5px 0 #4E93AB}
+  mark.hl[data-c="green"]{background:#D3E2B4;box-shadow:inset 0 -1.5px 0 #7A9E45}
+  mark.hl.note::after{
+    content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
+    background:var(--ink);vertical-align:super;margin-left:2px;
+  }
+  mark.hl.flash{animation:flash 1.1s ease-out}
+  @keyframes flash{0%,55%{box-shadow:0 0 0 5px rgba(15,92,107,.32)}100%{box-shadow:inset 0 -1.5px 0 #D9AE1B}}
+
+  /* ---------- selection popover ---------- */
+  .pop{
+    position:absolute;z-index:80;display:none;
+    background:var(--ink);border-radius:5px;padding:6px;
+    box-shadow:0 6px 20px rgba(10,30,40,.34);
+  }
+  .pop.on{display:flex;gap:5px;align-items:center}
+  .swatch{
+    width:27px;height:27px;border-radius:4px;border:1px solid rgba(255,255,255,.25);
+    cursor:pointer;padding:0;
+  }
+  .pop button.act{
+    font-family:var(--sans);font-size:13px;font-weight:600;
+    background:#2A414B;color:#EEF3F5;border:0;padding:6px 10px;
+    border-radius:4px;cursor:pointer;
+  }
+
+  /* ---------- panels ---------- */
+  .scrim{
+    position:fixed;inset:0;background:rgba(16,38,46,.45);
+    z-index:90;display:none;
+  }
+  .scrim.on{display:block}
+  .sheet{
+    position:fixed;z-index:100;background:var(--paper);
+    display:none;flex-direction:column;
+  }
+  .sheet.on{display:flex}
+  @media (min-width:721px){
+    .sheet{top:0;right:0;bottom:0;width:390px;box-shadow:-8px 0 28px rgba(10,30,40,.2)}
+  }
+  @media (max-width:720px){
+    .sheet{left:0;right:0;bottom:0;max-height:82vh;border-radius:12px 12px 0 0}
+  }
+  .sheet header{
+    display:flex;align-items:center;gap:10px;
+    padding:14px 16px;border-bottom:1px solid var(--line);
+  }
+  .sheet header h3{margin:0;flex:1;font-size:17px}
+  .sheet .body{overflow:auto;padding:6px 16px 26px;flex:1}
+  .sheet footer{padding:12px 16px;border-top:1px solid var(--line);display:flex;gap:8px}
+  .x{background:none;border:0;font-size:22px;line-height:1;cursor:pointer;color:var(--muted);padding:0 4px}
+
+  .btn{
+    font-family:var(--sans);font-size:14.5px;font-weight:600;
+    padding:9px 14px;border-radius:4px;cursor:pointer;border:1px solid var(--deep);
+    background:var(--deep);color:#fff;
+  }
+  .btn.ghost{background:transparent;color:var(--deep)}
+  .btn.danger{border-color:var(--alert);color:var(--alert);background:transparent}
+  .btn:disabled{opacity:.45;cursor:default}
+
+  textarea{
+    width:100%;min-height:104px;font-family:var(--serif);font-size:16px;
+    padding:10px;border:1px solid var(--line);border-radius:4px;
+    background:#fff;color:var(--ink);resize:vertical;
+  }
+  textarea:focus{outline:2px solid var(--deep);outline-offset:-1px}
+  .quoted{
+    border-left:3px solid var(--signal);padding-left:11px;margin:0 0 14px;
+    font-size:15.5px;color:var(--muted);font-style:italic;
+  }
+
+  .note{
+    padding:13px 0;border-bottom:1px solid var(--line);cursor:pointer;
+  }
+  .note .frag{
+    font-size:14.5px;color:var(--muted);
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  }
+  .note .txt{margin:5px 0 6px;font-size:16px}
+  .note .by{
+    font-family:var(--sans);font-size:12.5px;color:var(--muted);
+    display:flex;align-items:center;gap:6px;
+  }
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--signal);flex:none}
+  .empty{color:var(--muted);padding:26px 0;font-size:16px}
+  .filters{display:flex;flex-wrap:wrap;gap:6px;padding:10px 0 2px}
+  .chip{
+    font-family:var(--sans);font-size:13px;padding:4px 10px;border-radius:12px;
+    border:1px solid var(--line);background:#fff;cursor:pointer;color:var(--muted);
+  }
+  .chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .drop{
+    border:1.5px dashed var(--line);border-radius:5px;padding:20px 14px;
+    text-align:center;color:var(--muted);font-family:var(--sans);font-size:14.5px;
+    margin-bottom:14px;
+  }
+  .toast{
+    position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:200;
+    background:var(--ink);color:#fff;font-family:var(--sans);font-size:14.5px;
+    padding:11px 18px;border-radius:4px;opacity:0;pointer-events:none;
+    transition:opacity .2s;box-shadow:0 6px 20px rgba(10,30,40,.3);
+  }
+  .toast.on{opacity:1}
+  .hint{
+    font-family:var(--sans);font-size:13.5px;color:var(--muted);
+    padding:10px 0 0;margin:0;
+  }
+
+  /* ---------- identity call-out ---------- */
+  .idcall{
+    background:#F2F6F7;border-left:4px solid var(--signal);
+    padding:16px 16px 14px;margin:22px 0 0;
+  }
+  .idcall .idrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .idcall label{font-family:var(--sans);font-weight:600;font-size:15px}
+  .idcall input{
+    font-family:var(--sans);font-size:16px;font-weight:600;
+    padding:7px 10px;border:1px solid var(--line);border-radius:4px;
+    background:#fff;color:var(--ink);min-width:150px;flex:1;max-width:230px;
+  }
+  .idcall input:focus{outline:2px solid var(--deep);outline-offset:-1px}
+  .idcall p{
+    font-family:var(--sans);font-size:14.5px;color:#33454E;
+    margin:10px 0 0;max-width:60ch;
+  }
+  .idcall .row2{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .idcall.set{border-left-color:var(--lichen);padding:11px 16px}
+  .idcall.set p{display:none}
+  .idcall.set label{color:var(--muted);font-weight:500}
+
+  /* ---------- help ---------- */
+  .help{list-style:none;padding:0;margin:4px 0 0}
+  .help li{
+    display:grid;grid-template-columns:26px 1fr;gap:0 12px;
+    padding:14px 0;border-top:1px solid var(--line);
+  }
+  .help li:first-child{border-top:0;padding-top:4px}
+  .help .mk{
+    width:18px;height:18px;border-radius:4px;margin-top:4px;
+    border:1px solid rgba(0,0,0,.12);
+  }
+  .help b{font-family:var(--sans);font-size:16.5px;display:block;margin-bottom:2px}
+  .help p{margin:0;font-size:15.5px;color:#33454E}
+  .help kbd{
+    font-family:var(--sans);font-size:14px;font-weight:600;
+    background:var(--ink);color:#fff;padding:1px 7px;border-radius:3px;
+  }
+  .first{
+    background:#F2F6F7;border-left:4px solid var(--deep);
+    padding:12px 14px;margin:0 0 18px;
+    font-family:var(--sans);font-size:15px;
+  }
+  .bar button.q{
+    padding:6px 10px;font-size:15px;line-height:1;
+  }
+</style>
+
+<div class="bar">
+  <div class="who">
+    <span class="dot" id="meDot"></span>
+    <input class="name" id="me" placeholder="Your name" aria-label="Your name">
+  </div>
+  <span class="count" id="cnt">0</span>
+  <button id="openNotes">Notes</button>
+  <button id="openShare">Share</button>
+  <button class="q js-help" id="openHelp" title="How this page works" aria-label="How this page works">?</button>
+</div>
+
+<main>
+<div class="sheet-paper" id="doc">
+
+<div class="idcall" id="idcall">
+  <div class="idrow">
+    <label for="me2">Your name</label>
+    <input id="me2" placeholder="e.g. Vipul" autocomplete="off" spellcheck="false">
+  </div>
+  <p>Every highlight and note you make is signed with this. Set it before you start marking, or the others won't be able to tell whose suggestion is whose.</p>
+  <div class="row2">
+    <button class="btn ghost js-help">How the notes work</button>
+  </div>
+</div>
+
+<header class="hero">
+  <p class="stamp">ROUTE CARD · DEPART 10 OCT · 2 MOTORCYCLES + 1 SUV · 14 DAYS</p>
+  <h1>Up the Srinagar side, and decide about Manali in Leh</h1>
+  <p class="standfirst" data-a="stand">The ascent is settled for acclimatisation reasons, not weather ones. The descent stays open as a live choice made on day ten, on advisories rather than forecasts.</p>
+</header>
+
+<div class="profile">
+  <svg viewBox="0 0 800 268" role="img" aria-label="Elevation profile from Srinagar over Zoji La and Fotu La to Leh, then the conditional descent over Taglang La, Lachung La and Baralacha La to Manali.">
+    <line x1="30" y1="101.8" x2="795" y2="101.8" stroke="#A8322D" stroke-width="1.2" stroke-dasharray="5 5"/>
+    <text x="30" y="94" fill="#D9736E" font-family="IBM Plex Mono, monospace" font-size="11">4,000 m — no overnight above this line</text>
+
+    <path class="trace" style="--len:900"
+      d="M40,225.6 L95,166.4 L130,126 L170,141.3 L225,169.7 L275,116.3 L310,96.3 L360,153.1 L410,127.4"
+      stroke="#4FC3D9"/>
+    <path class="trace" style="--len:900"
+      d="M410,127.4 L470,33.7 L520,76.2 L560,47.2 L590,63.9 L630,87 L675,56.2 L730,142.8 L780,201.8"
+      stroke="#E8B21D" stroke-dasharray="7 5"/>
+
+    <g fill="#EEF3F5" font-family="IBM Plex Mono, monospace" font-size="10.5">
+      <circle cx="40" cy="225.6" r="3" fill="#4FC3D9"/><text x="30" y="245">Srinagar</text>
+      <circle cx="130" cy="126" r="3.6" fill="#4FC3D9"/><text x="104" y="118">Zoji La</text>
+      <circle cx="225" cy="169.7" r="3" fill="#4FC3D9"/><text x="205" y="188">Kargil</text>
+      <circle cx="310" cy="96.3" r="3.6" fill="#4FC3D9"/><text x="288" y="88">Fotu La</text>
+      <circle cx="410" cy="127.4" r="4.6" fill="#fff"/><text x="396" y="148">LEH</text>
+      <circle cx="470" cy="33.7" r="3.6" fill="#E8B21D"/><text x="440" y="26">Taglang La</text>
+      <circle cx="630" cy="87" r="3" fill="#E8B21D"/><text x="614" y="106">Sarchu</text>
+      <circle cx="675" cy="56.2" r="3.6" fill="#E8B21D"/><text x="644" y="48">Baralacha</text>
+      <circle cx="730" cy="142.8" r="3.6" fill="#6EE38F"/><text x="714" y="162">Jispa</text>
+      <text x="758" y="220">Manali</text>
+    </g>
+  </svg>
+</div>
+<p class="key">
+  <span><i style="border-color:#4FC3D9"></i>Ascent, committed</span>
+  <span><i style="border-color:#E8B21D;border-top-style:dashed"></i>Descent, conditional</span>
+  <span><i style="border-color:#6EE38F"></i>First safe overnight coming down</span>
+</p>
+
+<h2>Why this way round</h2>
+<p data-a="why1">Srinagar wins on acclimatisation before it wins on anything else. It steps you from 1,585 m to 2,676 m at Kargil and only then to 3,500 m at Leh, across two sleeps. The Manali side puts you at Sarchu, around 4,290 m, on your second night out of Manali — that is the single most common way riders get altitude sickness on this circuit.</p>
+<p data-a="why2">Weather is the second argument, not the first. Manali–Leh is not shut in mid-October: it closed for winter on 20 November 2025, and on similar dates in 2023 and 2022. What makes 10 October marginal is not the calendar but the chance of one weather system arriving while you are between Darcha and Upshi.</p>
+<p data-a="why3">Two-wheeler restrictions past Darcha belong to the opening season, not the closing one. In late May 2025 bikes were kept off the road for the first couple of weeks while snow walls were cut back. That rule does not reappear in October.</p>
+
+<h2>What the support vehicle changes</h2>
+<p data-a="suv">Most of the standard case against Manali in October is really a case against riding it unsupported. The 365 km fuel gap from Tandi to Karu exists in July too, and jerry cans close it. Punctures, a rider who stops coping with the cold, an early AMS presentation — all of these become manageable when there is a heated cabin and a spare seat moving with you. Keep the SUV behind the bikes, not ahead.</p>
+
+<h2>Passes, honestly compared</h2>
+<table>
+  <tr><th>Ascent, Srinagar side</th><th>Height</th></tr>
+  <tr><td data-a="p1">Zoji La — the one bad stretch, roughly 15 km, icy till mid-morning, one-way convoy timings</td><td class="n">3,528 m</td></tr>
+  <tr><td data-a="p2">Namika La</td><td class="n">3,718 m</td></tr>
+  <tr><td data-a="p3">Fotu La — highest point of the ascent, and still below Sarchu</td><td class="n">4,108 m</td></tr>
+</table>
+<table>
+  <tr><th>Descent, Manali side</th><th>Height</th></tr>
+  <tr><td data-a="p4">Taglang La — first and highest, hit it before noon</td><td class="n">5,328 m</td></tr>
+  <tr><td data-a="p5">Lachung La</td><td class="n">5,065 m</td></tr>
+  <tr><td data-a="p6">Nakee La</td><td class="n">4,739 m</td></tr>
+  <tr><td data-a="p7">Baralacha La — black ice at Zingzingbar is the known bad patch</td><td class="n">4,890 m</td></tr>
+</table>
+
+<h2>Fourteen days</h2>
+<p class="sub">Distances are riding days, not record attempts. Sunset is around 6 pm and shortening.</p>
+
+<div class="day"><div class="daynum">1</div><div><h4>Kurukshetra → Jammu</h4><p data-a="d1">Plains running. Get it done early so nobody is riding the Jammu approach in the dark.</p></div></div>
+<div class="day"><div class="daynum">2</div><div><h4>Jammu → Srinagar <span class="alt">1,585 m</span></h4><p data-a="d2">Patnitop and the tunnels. First real altitude, still comfortable.</p></div></div>
+<div class="day"><div class="daynum">3</div><div><h4>Srinagar → Kargil <span class="alt">2,676 m</span></h4><p data-a="d3">Zoji La in the morning window. Check convoy timings the night before in Sonamarg.</p></div></div>
+<div class="day"><div class="daynum">4</div><div><h4>Kargil → Leh <span class="alt">3,500 m</span></h4><p data-a="d4">Namika La and Fotu La. Long day, easy gradient.</p></div></div>
+<div class="day rest"><div class="daynum">5</div><div><h4>Leh — rest day</h4><p data-a="d5">Not optional with motorcycles. Permits, servicing, oximeter readings morning and night for everyone.</p></div></div>
+<div class="day"><div class="daynum">6</div><div><h4>Leh → Nubra <span class="alt">3,050 m</span></h4><p data-a="d6">Khardung La crossing, then down. You sleep lower than Leh, which is the point.</p></div></div>
+<div class="day"><div class="daynum">7</div><div><h4>Nubra — Turtuk and back</h4><p data-a="d7">Low, warm by regional standards, and the best rest you will get outside Leh.</p></div></div>
+<div class="day"><div class="daynum">8</div><div><h4>Nubra → Pangong <span class="alt">4,250 m</span></h4><p data-a="d8">The Shyok road. Cold night — confirm the stay has real heating before you commit to it.</p></div></div>
+<div class="day"><div class="daynum">9</div><div><h4>Pangong → Leh</h4><p data-a="d9">Chang La in daylight, no later. Ice re-forms on the descent side by late afternoon.</p></div></div>
+<div class="day rest"><div class="daynum">10</div><div><h4>Leh — decision day</h4><p data-a="d10">Rest, refuel, and make the call below.</p></div></div>
+<div class="day"><div class="daynum">11</div><div><h4>Leh → Jispa <span class="alt">3,200 m</span></h4><p data-a="d11">If Manali is a go. One long push, first light, all four passes in a day.</p></div></div>
+<div class="day"><div class="daynum">12</div><div><h4>Jispa → Manali</h4><p data-a="d12">Atal Tunnel. Once you are through, you are effectively out of the mountains.</p></div></div>
+<div class="day"><div class="daynum">13</div><div><h4>Manali → Kurukshetra</h4><p data-a="d13">Or Chandigarh if the group is tired.</p></div></div>
+<div class="day"><div class="daynum">14</div><div><h4>Buffer</h4><p data-a="d14">Spend it on weather, a breakdown, or a slower ride home. Do not plan anything into it.</p></div></div>
+</div>
+
+<div class="gate">
+  <h2>Day ten, in Leh</h2>
+  <p data-a="g1">Do not settle the return route in September. Settle it here, with four days of visibility, using the Lahaul–Spiti district administration advisory and the BRO position — not a long-range forecast.</p>
+  <ol>
+    <li data-a="g2">Road open to civilian traffic all the way through, with no advisory pending? Manali is a go.</li>
+    <li data-a="g3">Anything ambiguous — a system forecast, a partial restriction, one-way movement at Baralacha? Turn around and go back the way you came. You lose the loop, not the trip.</li>
+    <li data-a="g4">If the bikes go Manali and the weather turns marginal, the SUV can carry both riders and the loop still ends safely. Agree this with everyone on day ten, not on the pass.</li>
+  </ol>
+  <p class="rule" data-a="g5">Whatever you decide: never sleep above Jispa.</p>
+  <p data-a="g6">Sarchu at 4,290 m is where this route actually hurts people — sub-zero, thin air, no heated rooms open in October, no help within hours. Jispa and Keylong have proper hotels running into November. Leh to Jispa in one day is long, and it is the correct kind of hard.</p>
+</div>
+
+<div class="sheet-paper">
+<h2>Sort these before you leave</h2>
+<ul class="kit">
+  <li data-a="k1"><b>Postpaid SIMs</b> Prepaid connections from the rest of India will not activate in J&amp;K or Ladakh. Every rider needs a postpaid number, arranged at home. This catches people out every season.</li>
+  <li data-a="k2"><b>Heated rooms at Nubra and Pangong</b> Tented camps fold up through October. Book permanent structures and get heating confirmed in writing, not over a phone call.</li>
+  <li data-a="k3"><b>One medical oxygen cylinder in the SUV</b> Portable cans are theatre. Carry a proper cylinder, plus a pulse oximeter, and take readings on the rest days so you know each person's baseline.</li>
+  <li data-a="k4"><b>Fuel discipline</b> Tandi to Karu is 365 km without a pump. Jerry cans in the SUV, filled at Tandi, and top the bikes up at Sarchu and Pang rather than running them low.</li>
+  <li data-a="k5"><b>Inner Line Permits</b> Needed for Nubra, Pangong and Khardung La. Do them on the Leh rest day, and carry printed copies — checkposts are not interested in your phone battery.</li>
+  <li data-a="k6"><b>Cold rated for −10 °C, not −2 °C</b> Leh nights sit near freezing by mid-October and Pangong goes well below. Heated grips earn their price on Chang La.</li>
+</ul>
+
+<div class="caution">
+  <p data-a="c1">On the Srinagar side, budget for the Kashmir valley's own rhythms: convoy movement days, one-way timings at Zoji La, and occasional restrictions that have nothing to do with weather. Ask locally in Srinagar the evening before you ride, and keep the day-14 buffer intact for exactly this.</p>
+</div>
+
+<h2>Marking this up together</h2>
+<p data-a="n1">Everyone on the trip can highlight this page, attach notes, and email their marks round as a file. Nothing is sent anywhere on its own — you export, they import.</p>
+<p><button class="btn ghost js-help">How it works</button></p>
+</div>
+</main>
+
+<div class="pop" id="pop" role="toolbar" aria-label="Mark selection">
+  <button class="swatch" data-c="yellow" style="background:#F7DE8E" title="Mark yellow" aria-label="Mark yellow"></button>
+  <button class="swatch" data-c="blue" style="background:#BFDCE6" title="Mark blue" aria-label="Mark blue"></button>
+  <button class="swatch" data-c="green" style="background:#D3E2B4" title="Mark green" aria-label="Mark green"></button>
+  <button class="act" id="popNote">Add note</button>
+</div>
+
+<div class="scrim" id="scrim"></div>
+
+<div class="sheet" id="notesSheet" role="dialog" aria-label="Notes">
+  <header><h3>Notes</h3><button class="x" data-close aria-label="Close">×</button></header>
+  <div class="body">
+    <div class="filters" id="filters"></div>
+    <div id="noteList"></div>
+  </div>
+</div>
+
+<div class="sheet" id="editSheet" role="dialog" aria-label="Edit note">
+  <header><h3 id="editTitle">Note</h3><button class="x" data-close aria-label="Close">×</button></header>
+  <div class="body">
+    <p class="quoted" id="editQuote"></p>
+    <textarea id="editText" placeholder="What do you want to say about this?"></textarea>
+  </div>
+  <footer>
+    <button class="btn" id="saveNote">Save note</button>
+    <button class="btn danger" id="delNote">Remove mark</button>
+  </footer>
+</div>
+
+<div class="sheet" id="helpSheet" role="dialog" aria-label="How this page works">
+  <header><h3>How this page works</h3><button class="x" data-close aria-label="Close">×</button></header>
+  <div class="body">
+    <p class="first" id="firstLine">Put your name in the top bar first. Every mark you make gets stamped with it, which is what makes the files readable when four of you are swapping them.</p>
+    <ul class="help">
+      <li>
+        <span class="mk" style="background:#F7DE8E"></span>
+        <div><b>Mark something</b><p>Select any text. A small bar appears — pick a colour.</p></div>
+      </li>
+      <li>
+        <span class="mk" style="background:#BFDCE6"></span>
+        <div><b>Add a note</b><p>Select text and choose <kbd>Add note</kbd>. To edit or remove one later, tap the highlight itself.</p></div>
+      </li>
+      <li>
+        <span class="mk" style="background:#D3E2B4"></span>
+        <div><b>Read them back</b><p><kbd>Notes</kbd> lists everything marked. Tap any entry to jump to it on the page.</p></div>
+      </li>
+      <li>
+        <span class="mk" style="background:var(--deep)"></span>
+        <div><b>Send yours</b><p><kbd>Share</kbd> → Download file to attach, or Copy as text to paste into the email body. Same notes either way.</p></div>
+      </li>
+      <li>
+        <span class="mk" style="background:var(--ink)"></span>
+        <div><b>Bring someone else's in</b><p><kbd>Share</kbd> → choose their file, or paste their text into the box. Their highlights land where they put them, in their name. Importing merges, so yours survive.</p></div>
+      </li>
+    </ul>
+    <p class="hint">Marks save as you make them. With several people's notes loaded, a filter row appears at the top of Notes so you can read one person at a time.</p>
+  </div>
+  <footer><button class="btn" id="helpDone">Got it</button></footer>
+</div>
+
+<div class="sheet" id="shareSheet" role="dialog" aria-label="Share">
+  <header><h3>Share</h3><button class="x" data-close aria-label="Close">×</button></header>
+  <div class="body">
+    <h3 style="margin-top:8px">Send yours</h3>
+    <p style="font-size:15.5px;color:var(--muted);margin-bottom:12px">Either download a file to attach, or copy the notes as text and paste them straight into the email. Both carry the same thing.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn" id="doExport">Download file</button>
+      <button class="btn ghost" id="doCopy">Copy as text</button>
+    </div>
+
+    <h3 style="margin-top:30px">Bring someone else's in</h3>
+    <div class="drop" id="drop">Drop a .json file here, or choose one</div>
+    <input type="file" id="file" accept=".json,application/json,text/plain" style="display:none">
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn ghost" id="pick">Choose file</button>
+      <button class="btn ghost" id="replaceMode" aria-pressed="false">Replace instead of merge</button>
+    </div>
+    <p class="hint">Easier on a phone: ask them to paste the text into the email, then paste it below.</p>
+    <textarea id="pasteBox" placeholder="Paste what they sent you" style="margin-top:8px"></textarea>
+    <div style="margin-top:8px"><button class="btn ghost" id="doPaste">Import pasted notes</button></div>
+    <p class="hint">Merging keeps your marks and adds theirs. Replacing clears yours first.</p>
+
+    <h3 style="margin-top:30px">Start over</h3>
+    <button class="btn danger" id="wipe">Clear everything on this page</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  var KEY = "ladakh-route-card-v1";
+  var COLORS = {yellow:"#F7DE8E", blue:"#BFDCE6", green:"#D3E2B4"};
+
+  /* ---------- storage adapter ----------
+     Artifact host: window.storage (async, persists across sessions).
+     Self-hosted:   real localStorage.
+     Same shape either way, so the page is portable. */
+  var store = (function(){
+    var hasArtifact = (typeof window !== "undefined" && window.storage && typeof window.storage.get === "function");
+    var hasLocal = (function(){
+      try { window.localStorage.setItem("__t","1"); window.localStorage.removeItem("__t"); return true; }
+      catch(e){ return false; }
+    })();
+    return {
+      mode: hasArtifact ? "artifact" : (hasLocal ? "localStorage" : "memory"),
+      get: function(){
+        if (hasArtifact) {
+          return window.storage.get(KEY)
+            .then(function(r){ return r && r.value ? JSON.parse(r.value) : null; })
+            .catch(function(){ return null; });
+        }
+        if (hasLocal) {
+          try { var v = window.localStorage.getItem(KEY); return Promise.resolve(v ? JSON.parse(v) : null); }
+          catch(e){ return Promise.resolve(null); }
+        }
+        return Promise.resolve(null);
+      },
+      set: function(obj){
+        var s = JSON.stringify(obj);
+        if (hasArtifact) return window.storage.set(KEY, s).catch(function(){ toast("Could not save"); });
+        if (hasLocal) { try { window.localStorage.setItem(KEY, s); } catch(e){ toast("Could not save"); } }
+        return Promise.resolve();
+      }
+    };
+  })();
+
+  var state = { me:"", marks:[], seenHelp:false };
+  var snapshots = new Map();
+  var pending = null;      // selection awaiting a colour
+  var editingId = null;
+  var replaceOnImport = false;
+  var activeAuthor = null; // filter
+  var nudged = false;
+
+  var $ = function(s){ return document.querySelector(s); };
+  var doc = document.getElementById("doc");
+
+  /* ---------- snapshot every annotatable block ---------- */
+  function blocks(){ return Array.prototype.slice.call(document.querySelectorAll("[data-a]")); }
+  blocks().forEach(function(el){ snapshots.set(el.dataset.a, el.innerHTML); });
+
+  /* ---------- offsets ---------- */
+  function offsetIn(root, node, off){
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var pos = 0, n;
+    while ((n = w.nextNode())) {
+      if (n === node) return pos + off;
+      pos += n.nodeValue.length;
+    }
+    return -1;
+  }
+
+  function wrapRange(root, m){
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var pos = 0, sN = null, sO = 0, eN = null, eO = 0, n;
+    while ((n = w.nextNode())) {
+      var len = n.nodeValue.length;
+      if (!sN && pos + len > m.start) { sN = n; sO = m.start - pos; }
+      if (sN && pos + len >= m.end) { eN = n; eO = m.end - pos; break; }
+      pos += len;
+    }
+    if (!sN || !eN) return;
+    var r = document.createRange();
+    try { r.setStart(sN, sO); r.setEnd(eN, eO); } catch(e){ return; }
+    var mk = document.createElement("mark");
+    mk.className = "hl" + (m.note ? " note" : "");
+    mk.dataset.c = m.color;
+    mk.dataset.id = m.id;
+    mk.title = m.note ? (m.author + ": " + m.note) : ("Marked by " + m.author);
+    try { mk.appendChild(r.extractContents()); r.insertNode(mk); } catch(e){}
+  }
+
+  function render(){
+    var byAnchor = {};
+    state.marks.forEach(function(m){
+      if (activeAuthor && m.author !== activeAuthor) return;
+      (byAnchor[m.anchor] = byAnchor[m.anchor] || []).push(m);
+    });
+    blocks().forEach(function(el){
+      var a = el.dataset.a;
+      el.innerHTML = snapshots.get(a);
+      var list = byAnchor[a];
+      if (!list) return;
+      list.slice().sort(function(x,y){ return y.start - x.start; })
+          .forEach(function(m){ wrapRange(el, m); });
+    });
+    $("#cnt").textContent = String(state.marks.length);
+    renderNotes();
+    renderFilters();
+  }
+
+  function save(){ return store.set(state); }
+
+  /* ---------- selection ---------- */
+  var pop = $("#pop");
+
+  function hidePop(){ pop.classList.remove("on"); }
+
+  document.addEventListener("selectionchange", function(){
+    var sel = document.getSelection();
+    if (!sel || sel.isCollapsed || sel.rangeCount === 0) { if (!pending) hidePop(); return; }
+    var r = sel.getRangeAt(0);
+    if (!doc.contains(r.commonAncestorContainer) && !document.querySelector("main").contains(r.commonAncestorContainer)) { hidePop(); return; }
+
+    var host = r.commonAncestorContainer;
+    if (host.nodeType === 3) host = host.parentNode;
+    host = host.closest ? host.closest("[data-a]") : null;
+    if (!host) { hidePop(); return; }
+
+    var s = offsetIn(host, r.startContainer, r.startOffset);
+    var e = offsetIn(host, r.endContainer, r.endOffset);
+    if (s < 0 || e < 0 || e - s < 2) { hidePop(); return; }
+
+    pending = { anchor: host.dataset.a, start: Math.min(s,e), end: Math.max(s,e), text: sel.toString().trim() };
+
+    var rect = r.getBoundingClientRect();
+    pop.classList.add("on");
+    var top = window.scrollY + rect.top - pop.offsetHeight - 9;
+    if (top < window.scrollY + 8) top = window.scrollY + rect.bottom + 9;
+    var left = window.scrollX + rect.left + rect.width/2 - pop.offsetWidth/2;
+    left = Math.max(8, Math.min(left, window.innerWidth - pop.offsetWidth - 8));
+    pop.style.top = top + "px";
+    pop.style.left = left + "px";
+  });
+
+  function newMark(color, note){
+    if (!pending) return null;
+    if (!state.me && !nudged) { nudged = true; hidePop(); nudgeName(); return null; }
+    var m = {
+      id: "m" + Date.now().toString(36) + Math.random().toString(36).slice(2,6),
+      anchor: pending.anchor, start: pending.start, end: pending.end,
+      text: pending.text, color: color, note: note || "",
+      author: state.me || "Unnamed", at: new Date().toISOString()
+    };
+    state.marks.push(m);
+    pending = null;
+    document.getSelection().removeAllRanges();
+    hidePop();
+    save(); render();
+    return m;
+  }
+
+  Array.prototype.forEach.call(pop.querySelectorAll(".swatch"), function(b){
+    b.addEventListener("mousedown", function(ev){ ev.preventDefault(); });
+    b.addEventListener("click", function(){ newMark(b.dataset.c, ""); toast("Marked"); });
+  });
+  $("#popNote").addEventListener("mousedown", function(ev){ ev.preventDefault(); });
+  $("#popNote").addEventListener("click", function(){
+    var m = newMark("yellow", "");
+    if (m) openEdit(m.id);
+  });
+
+  /* ---------- clicking an existing mark ---------- */
+  document.addEventListener("click", function(ev){
+    var mk = ev.target.closest ? ev.target.closest("mark.hl") : null;
+    if (mk) openEdit(mk.dataset.id);
+  });
+
+  /* ---------- panels ---------- */
+  function openSheet(id){
+    $("#scrim").classList.add("on");
+    document.querySelectorAll(".sheet").forEach(function(s){ s.classList.remove("on"); });
+    $(id).classList.add("on");
+  }
+  function closeSheets(){
+    $("#scrim").classList.remove("on");
+    document.querySelectorAll(".sheet").forEach(function(s){ s.classList.remove("on"); });
+    editingId = null;
+  }
+  $("#scrim").addEventListener("click", closeSheets);
+  document.querySelectorAll("[data-close]").forEach(function(b){ b.addEventListener("click", closeSheets); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") { closeSheets(); hidePop(); } });
+
+  $("#openNotes").addEventListener("click", function(){ openSheet("#notesSheet"); });
+  $("#openShare").addEventListener("click", function(){ openSheet("#shareSheet"); });
+
+  function showHelp(){
+    $("#firstLine").style.display = state.me ? "none" : "";
+    openSheet("#helpSheet");
+  }
+  document.querySelectorAll(".js-help").forEach(function(b){
+    b.addEventListener("click", showHelp);
+  });
+  $("#helpDone").addEventListener("click", function(){
+    state.seenHelp = true; save(); closeSheets();
+    if (!state.me) setTimeout(function(){ nudgeName(); }, 120);
+  });
+
+  function openEdit(id){
+    var m = state.marks.filter(function(x){ return x.id === id; })[0];
+    if (!m) return;
+    editingId = id;
+    $("#editTitle").textContent = (m.author === (state.me || "Unnamed")) ? "Your note" : ("Note by " + m.author);
+    $("#editQuote").textContent = m.text;
+    $("#editText").value = m.note || "";
+    openSheet("#editSheet");
+    setTimeout(function(){ $("#editText").focus(); }, 60);
+  }
+
+  $("#saveNote").addEventListener("click", function(){
+    var m = state.marks.filter(function(x){ return x.id === editingId; })[0];
+    if (!m) return;
+    m.note = $("#editText").value.trim();
+    save(); render(); closeSheets(); toast("Note saved");
+  });
+
+  $("#delNote").addEventListener("click", function(){
+    state.marks = state.marks.filter(function(x){ return x.id !== editingId; });
+    save(); render(); closeSheets(); toast("Mark removed");
+  });
+
+  /* ---------- notes list ---------- */
+  function renderNotes(){
+    var list = $("#noteList");
+    var items = state.marks.filter(function(m){ return !activeAuthor || m.author === activeAuthor; });
+    if (!items.length) {
+      list.innerHTML = '<p class="empty">Nothing marked yet. Select any text on the page to start.</p>';
+      return;
+    }
+    list.innerHTML = "";
+    items.forEach(function(m){
+      var d = document.createElement("div");
+      d.className = "note";
+      var by = document.createElement("div");
+      by.className = "by";
+      by.innerHTML = '<span class="dot" style="background:' + COLORS[m.color] + '"></span>';
+      by.appendChild(document.createTextNode(m.author));
+      var frag = document.createElement("div");
+      frag.className = "frag";
+      frag.textContent = m.text;
+      d.appendChild(by);
+      if (m.note) {
+        var t = document.createElement("p");
+        t.className = "txt";
+        t.textContent = m.note;
+        d.appendChild(t);
+      }
+      d.appendChild(frag);
+      d.addEventListener("click", function(){ jumpTo(m.id); });
+      list.appendChild(d);
+    });
+  }
+
+  function renderFilters(){
+    var authors = [];
+    state.marks.forEach(function(m){ if (authors.indexOf(m.author) < 0) authors.push(m.author); });
+    var f = $("#filters");
+    if (authors.length < 2) { f.innerHTML = ""; return; }
+    f.innerHTML = "";
+    var all = document.createElement("button");
+    all.className = "chip"; all.textContent = "Everyone";
+    all.setAttribute("aria-pressed", activeAuthor ? "false" : "true");
+    all.addEventListener("click", function(){ activeAuthor = null; render(); });
+    f.appendChild(all);
+    authors.forEach(function(a){
+      var b = document.createElement("button");
+      b.className = "chip"; b.textContent = a;
+      b.setAttribute("aria-pressed", activeAuthor === a ? "true" : "false");
+      b.addEventListener("click", function(){ activeAuthor = (activeAuthor === a ? null : a); render(); });
+      f.appendChild(b);
+    });
+  }
+
+  function jumpTo(id){
+    closeSheets();
+    setTimeout(function(){
+      var el = document.querySelector('mark.hl[data-id="' + id + '"]');
+      if (!el) { toast("That mark is filtered out"); return; }
+      el.scrollIntoView({behavior:"smooth", block:"center"});
+      el.classList.add("flash");
+      setTimeout(function(){ el.classList.remove("flash"); }, 1200);
+    }, 130);
+  }
+
+  /* ---------- export / import ---------- */
+  function myPayload(){
+    var who = state.me || "Unnamed";
+    var mine = state.marks.filter(function(m){ return m.author === who; });
+    if (!mine.length) return null;
+    return { app:"ladakh-route-card", version:1, author:who,
+             exportedAt:new Date().toISOString(), marks:mine };
+  }
+
+  $("#doExport").addEventListener("click", function(){
+    var payload = myPayload();
+    if (!payload) { toast("You haven't marked anything yet"); return; }
+    var blob = new Blob([JSON.stringify(payload, null, 2)], {type:"application/json"});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "ladakh-notes-" + payload.author.toLowerCase().replace(/[^a-z0-9]+/g,"-") + ".json";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1500);
+    toast("Downloaded " + payload.marks.length + " mark" + (payload.marks.length>1?"s":""));
+  });
+
+  $("#doCopy").addEventListener("click", function(){
+    var payload = myPayload();
+    if (!payload) { toast("You haven't marked anything yet"); return; }
+    var txt = JSON.stringify(payload);
+    var done = function(){ toast("Copied — paste it into your email"); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(done).catch(function(){ fallbackCopy(txt, done); });
+    } else { fallbackCopy(txt, done); }
+  });
+
+  function fallbackCopy(txt, done){
+    var ta = document.createElement("textarea");
+    ta.value = txt;
+    ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); done(); }
+    catch(e){ toast("Could not copy — use Download file instead"); }
+    ta.remove();
+  }
+
+  $("#doPaste").addEventListener("click", function(){
+    var raw = $("#pasteBox").value.trim();
+    if (!raw) { toast("Paste their notes into the box first"); return; }
+    var data;
+    try { data = JSON.parse(raw); }
+    catch(e){ toast("That doesn't look like their notes — copy the whole thing"); return; }
+    $("#pasteBox").value = "";
+    ingest(data);
+  });
+
+  $("#replaceMode").addEventListener("click", function(){
+    replaceOnImport = !replaceOnImport;
+    this.setAttribute("aria-pressed", String(replaceOnImport));
+    this.textContent = replaceOnImport ? "Replacing on import" : "Replace instead of merge";
+  });
+
+  $("#pick").addEventListener("click", function(){ $("#file").click(); });
+  $("#file").addEventListener("change", function(){
+    if (this.files && this.files[0]) readFile(this.files[0]);
+    this.value = "";
+  });
+
+  var drop = $("#drop");
+  ["dragenter","dragover"].forEach(function(t){
+    drop.addEventListener(t, function(e){ e.preventDefault(); drop.style.borderColor = "#0F5C6B"; });
+  });
+  ["dragleave","drop"].forEach(function(t){
+    drop.addEventListener(t, function(e){ e.preventDefault(); drop.style.borderColor = ""; });
+  });
+  drop.addEventListener("drop", function(e){
+    var f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+    if (f) readFile(f);
+  });
+  drop.addEventListener("click", function(){ $("#file").click(); });
+
+  function readFile(f){
+    var fr = new FileReader();
+    fr.onload = function(){
+      var data;
+      try { data = JSON.parse(fr.result); }
+      catch(e){ toast("That file isn't valid JSON"); return; }
+      ingest(data);
+    };
+    fr.onerror = function(){ toast("Could not read that file"); };
+    fr.readAsText(f);
+  }
+
+  function ingest(data){
+    if (!data || data.app !== "ladakh-route-card" || !Array.isArray(data.marks)) {
+      toast("That file isn't from this page");
+      return;
+    }
+    var incoming = data.marks.filter(function(m){
+      return m && m.id && m.anchor && snapshots.has(m.anchor)
+        && typeof m.start === "number" && typeof m.end === "number";
+    }).map(function(m){
+      m.author = m.author || data.author || "Unnamed";
+      m.color = COLORS[m.color] ? m.color : "yellow";
+      return m;
+    });
+
+    if (!incoming.length) { toast("No usable marks in that file"); return; }
+
+    if (replaceOnImport) {
+      state.marks = incoming;
+    } else {
+      var have = {};
+      state.marks.forEach(function(m){ have[m.id] = true; });
+      var added = 0;
+      incoming.forEach(function(m){ if (!have[m.id]) { state.marks.push(m); added++; } });
+      if (!added) { toast("Already imported — nothing new"); closeSheets(); return; }
+    }
+    save(); render(); closeSheets();
+    toast("Imported " + incoming.length + " from " + (data.author || "someone"));
+  }
+
+  $("#wipe").addEventListener("click", function(){
+    if (!state.marks.length) { toast("Nothing to clear"); return; }
+    if (this.dataset.armed !== "1") {
+      this.dataset.armed = "1";
+      this.textContent = "Tap again to confirm";
+      var b = this;
+      setTimeout(function(){ b.dataset.armed = "0"; b.textContent = "Clear everything on this page"; }, 4000);
+      return;
+    }
+    state.marks = []; activeAuthor = null;
+    this.dataset.armed = "0";
+    this.textContent = "Clear everything on this page";
+    save(); render(); closeSheets(); toast("Cleared");
+  });
+
+  /* ---------- identity ---------- */
+  var meInput = $("#me"), meInput2 = $("#me2"), idcall = $("#idcall");
+
+  function reflectIdentity(){
+    var named = !!state.me;
+    idcall.classList.toggle("set", named);
+    $("#meDot").style.background = named ? "var(--lichen)" : "var(--alert)";
+    idcall.querySelector("label").textContent = named ? "Marking as" : "Your name";
+  }
+
+  function setName(v, from){
+    var was = state.me || "Unnamed";
+    state.me = v.trim();
+    var now = state.me || "Unnamed";
+    state.marks.forEach(function(m){ if (m.author === was) m.author = now; });
+    if (from !== "bar") meInput.value = state.me;
+    if (from !== "call") meInput2.value = state.me;
+    reflectIdentity();
+    save(); renderFilters(); renderNotes();
+  }
+
+  meInput.addEventListener("input", function(){ setName(this.value, "bar"); });
+  meInput2.addEventListener("input", function(){ setName(this.value, "call"); });
+
+  function nudgeName(){
+    toast("Add your name first so the others know it's yours");
+    idcall.scrollIntoView({behavior:"smooth", block:"center"});
+    setTimeout(function(){ meInput2.focus(); }, 420);
+  }
+
+  /* ---------- toast ---------- */
+  var toastEl = $("#toast"), toastT;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add("on");
+    clearTimeout(toastT);
+    toastT = setTimeout(function(){ toastEl.classList.remove("on"); }, 2100);
+  }
+
+  /* ---------- boot ---------- */
+  store.get().then(function(saved){
+    if (saved && Array.isArray(saved.marks)) {
+      state.marks = saved.marks.filter(function(m){ return m && snapshots.has(m.anchor); });
+      state.me = saved.me || "";
+      state.seenHelp = !!saved.seenHelp;
+    }
+    meInput.value = state.me;
+    meInput2.value = state.me;
+    reflectIdentity();
+    render();
+    if (!state.seenHelp) setTimeout(showHelp, 550);
+  }).catch(function(){ render(); });
+
+})();
+</script>
