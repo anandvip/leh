@@ -336,6 +336,13 @@
   .legs tr.off td{color:var(--muted);font-style:italic}
   .legs tr.tight td:nth-child(3){color:var(--alert);font-weight:600}
   .legs tfoot td{font-weight:700;border-bottom:0;padding-top:11px}
+  .legs.stays td:nth-child(2),.legs.stays td:nth-child(3){
+    font-family:var(--sans);font-size:14px;text-align:left;
+    white-space:normal;padding-right:10px;
+  }
+  .legs.stays th:nth-child(2),.legs.stays th:nth-child(3){text-align:left}
+  .legs.stays td:nth-child(3){color:var(--muted)}
+  .legs.stays tr.tight td:nth-child(3){color:var(--alert);font-weight:600}
   .verdict{
     background:#F2F6F7;border-left:4px solid var(--deep);
     padding:13px 15px;margin:14px 0 0;
@@ -476,6 +483,7 @@
 
 <h2>Two ways in, by the clock</h2>
 <p class="sub">Moving time only — no tea, no photographs, no punctures, no convoy waits. Assume a riding window of 8 am to 6 pm, so anything past about eight and a half hours is already eating into the dark.</p>
+<p data-a="loopnote">Both tabs are the same closed loop — Kurukshetra, Manali, Leh, Srinagar, home — ridden in opposite directions. So the kilometres and the hours are identical by definition, and totals tell you nothing. What differs is <em>where in the trip</em> the hard legs fall.</p>
 
 <div class="tabs" role="tablist">
   <button role="tab" id="tabA" aria-controls="panelA" aria-selected="true">In via Srinagar</button>
@@ -504,9 +512,21 @@
   <tfoot><tr><td data-a="LA15">Eleven riding days</td><td>2,727</td><td>74:30</td></tr></tfoot>
 </table>
 <div class="verdict">
-  <b>One tight day, and a spare one in hand.</b>
-  <span data-a="VA">Leh to Jispa at 9:30 moving does not fit an 8 am start. Roll out at first light — 6 am — and you are into Jispa with daylight to spare. Everything else sits inside the window with room for the things that go wrong. Day fourteen stays empty.</span>
+  <b>The hardest leg lands on day eleven, fully acclimatised.</b>
+  <span data-a="VA">Leh to Jispa at 9:30 moving does not fit an 8 am start — roll out at first light and you are in with daylight to spare. By then you have ten days of altitude behind you and know how everyone rides. All three non-riding days stay genuinely free, and the spare one sits at the end, where a delay actually needs absorbing.</span>
 </div>
+<h3>Where you sleep</h3>
+<table class="legs stays"><thead><tr><th>Halt</th><th>What there is</th><th>Mid-October</th></tr></thead><tbody>
+<tr><td data-a="SA1">Jammu</td><td>Hotels of every grade near the station; gurudwara sarais and dharamshalas for a nominal donation; Katra has hundreds of dharamshalas if you divert</td><td>Open all year</td></tr>
+<tr><td data-a="SA2">Srinagar</td><td>Hotels around Dalgate and the Boulevard, Dal Lake houseboats, family guesthouses</td><td>Open. Houseboats are cold after dark — ask for a room heater, not a bukhari</td></tr>
+<tr><td data-a="SA3">Kargil</td><td>Town hotels, a JKTDC guesthouse, a growing set of homestays</td><td>Open all year. Garrison town, so the most dependable halt on the route</td></tr>
+<tr><td data-a="SA4">Leh</td><td>The full range — hotels, Changspa guesthouses, Old Town homestays</td><td>Open, but properties begin closing from late October. Book heated rooms, confirm hot water</td></tr>
+<tr><td data-a="SA5">Nubra — Hunder or Diskit</td><td>Hotels, desert camps, village homestays, and the monastery guesthouse at Diskit</td><td>Camps fold up through October. Homestays and permanent hotels carry on</td></tr>
+<tr class="tight"><td data-a="SA6">Pangong — Spangmik, Man or Merak</td><td>Village homestays and a shrinking number of camps. Nothing else exists</td><td>Your coldest night. Most camps gone by mid-month; homestays run on solar with little or no heating</td></tr>
+<tr><td data-a="SA7">Leh</td><td>As above</td><td>As above</td></tr>
+<tr><td data-a="SA8">Jispa or Keylong</td><td>Small permanent hotels, a PWD rest house, seasonal camps</td><td>Hotels run into November. This is your safe halt coming down — see the rule above</td></tr>
+<tr><td data-a="SA9">Manali</td><td>Everything, at every price</td><td>Open all year</td></tr>
+</tbody></table>
 </div>
 
 <div class="panel" id="panelB" role="tabpanel" aria-labelledby="tabB" hidden>
@@ -531,10 +551,27 @@
   <tfoot><tr><td data-a="LB15">Eleven riding days</td><td>2,727</td><td>74:30</td></tr></tfoot>
 </table>
 <div class="verdict">
-  <b>Same distance, same hours, no buffer left.</b>
-  <span data-a="VB">Identical mileage — the difference is never distance. You cross 5,328 m on day three and sleep in Leh with two days of altitude behind you, which costs a second rest day to recover. That second rest day eats the buffer. Fourteen days in, fourteen days out, nothing spare for a closed pass or a broken chain.</span>
+  <b>The hardest leg lands on your least acclimatised day.</b>
+  <span data-a="VB">Same loop, same hours — but the 9:30 day is day three, crossing Taglang La at 5,328 m before anyone has adjusted. Recovering from that costs a second rest day in Leh, so of your three non-riding days two are already spoken for. The one that's left sits mid-trip in Leh, where it cannot absorb a delay on the way home. You still have a spare day; it is just in the wrong place.</span>
 </div>
 </div>
+<h3>Where you sleep</h3>
+<table class="legs stays"><thead><tr><th>Halt</th><th>What there is</th><th>Mid-October</th></tr></thead><tbody>
+<tr><td data-a="SB1">Manali</td><td>Everything, at every price</td><td>Open all year</td></tr>
+<tr><td data-a="SB2">Jispa or Keylong</td><td>Small permanent hotels, a PWD rest house, seasonal camps</td><td>Hotels run into November. Sleep here, not at Sarchu</td></tr>
+<tr class="tight"><td data-a="SB3">Sarchu — the one you skip</td><td>Tented camps only. No permanent building, no medical help, no mobile network</td><td>Camps largely dismantled by early October. At 4,290 m this is the halt that hurts people</td></tr>
+<tr><td data-a="SB4">Leh</td><td>The full range — hotels, Changspa guesthouses, Old Town homestays</td><td>Open, but properties begin closing from late October. You need two nights here, not one</td></tr>
+<tr><td data-a="SB5">Nubra — Hunder or Diskit</td><td>Hotels, desert camps, village homestays, and the monastery guesthouse at Diskit</td><td>Camps fold up through October. Homestays and permanent hotels carry on</td></tr>
+<tr class="tight"><td data-a="SB6">Pangong — Spangmik, Man or Merak</td><td>Village homestays and a shrinking number of camps. Nothing else exists</td><td>Your coldest night. Most camps gone by mid-month; homestays run on solar with little or no heating</td></tr>
+<tr><td data-a="SB7">Leh</td><td>As above</td><td>As above</td></tr>
+<tr><td data-a="SB8">Kargil</td><td>Town hotels, a JKTDC guesthouse, a growing set of homestays</td><td>Open all year. Garrison town, so the most dependable halt on the route</td></tr>
+<tr><td data-a="SB9">Srinagar</td><td>Hotels around Dalgate and the Boulevard, Dal Lake houseboats, family guesthouses</td><td>Open. Houseboats are cold after dark — ask for a room heater, not a bukhari</td></tr>
+<tr><td data-a="SB10">Jammu</td><td>Hotels of every grade near the station; gurudwara sarais and dharamshalas for a nominal donation</td><td>Open all year</td></tr>
+</tbody></table>
+</div>
+
+<div class="caution" style="margin-top:26px">
+  <p data-a="bookrule">None of the above is a booking. In October availability changes week to week, so ring each halt yourself and ask two questions: is the property open on your dates, and is there working room heating. Get Nubra, Pangong and your Jispa night confirmed before you leave home — those three have the fewest fallbacks. Everywhere else you can improvise. Carry cash; card machines fail past Kargil.</p>
 </div>
 
 <div class="gate">
